@@ -72,8 +72,8 @@
 
         redraw(){}
     });
-})();
-loadScript(src, shadowRoot) {
+}
+ loadScript(src, shadowRoot) {
 			return new Promise(function(resolve, reject) {
 				let script = document.createElement('script');
 				script.src = src;
@@ -86,4 +86,5 @@ loadScript(src, shadowRoot) {
 
 			shadowRoot.appendChild(script)
 			});
-	}
+	})();
+
