@@ -13,19 +13,23 @@
 
  
 
-        constructor() {
-            super(); 
+            constructor() {
+            super();
             this._shadowRoot = this.attachShadow({mode: "open"});
                     this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = 0;
-            
+           
             let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
             $.ajax({
               url: GoogleSRC,
               dataType: "script",
-              success: success
+              success: function(data) {
+                console.log("Script loaded");
+              },
+              async: true
             });
         }
+
 
  
 
