@@ -4,7 +4,7 @@
         <h1>Testing!!!</h1>
     `;
 
-    customElements.define('com-sap-sample-TestingLib', class TestingLib extends HTMLElement {
+    customElements.define('com.sap.sample.testinglib', class TestingLib extends HTMLElement {
 
 
 		constructor() {
