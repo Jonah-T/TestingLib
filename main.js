@@ -44,7 +44,20 @@
             this.redraw();
         }
 		}
+	loadScript(src, shadowRoot) {
+			return new Promise(function(resolve, reject) {
+				let script = document.createElement('script');
+				script.src = src;
 
+				script.onload = () => {
+					console.log("Load: " + src);
+					resolve(script);
+				}
+				script.onerror = () => reject(new Error(`Script load error for ${src}`));
+
+				shadowRoot.appendChild(script)
+			});
+	}
         //When the custom widget is removed from the canvas or the analytic application is closed
         onCustomWidgetDestroy(){
         }
@@ -59,18 +72,4 @@
 
         redraw(){}
     });
-},
-		function loadScript(src, shadowRoot) {
-			return new Promise(function(resolve, reject) {
-				let script = document.createElement('script');
-				script.src = src;
-
-				script.onload = () => {
-					console.log("Load: " + src);
-					resolve(script);
-				}
-				script.onerror = () => reject(new Error(`Script load error for ${src}`));
-
-				shadowRoot.appendChild(script)
-			});
-		})();
+})();
