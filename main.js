@@ -73,7 +73,7 @@
         redraw(){}
     });
 }
- loadScript(src, shadowRoot) {
+function loadScript(src, shadowRoot) {
 			return new Promise(function(resolve, reject) {
 				let script = document.createElement('script');
 				script.src = src;
