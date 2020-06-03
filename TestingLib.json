@@ -1,0 +1,26 @@
+{
+	"name": "Testing Lib",
+	"description": "Caricamento lib esterne",
+	"eula": "",
+	"vendor": "",
+	"license": "",
+	"id": "com.sap.sample.TestingLib",
+	"newInstancePrefix": "TestingLib",
+	"version": "0.0.1",
+	"webcomponents": [
+        {
+			"kind": "main",
+			"tag": "com-sap-sample-TestingLib",			
+            "url": "https://jonah-t.github.io/TestingLib/main.js",
+            "integrity": "",
+            "ignoreIntegrity" : true
+        },
+    ],
+	"properties": {
+	},
+	"methods": {
+	},
+	
+	"events": {
+	}
+}
