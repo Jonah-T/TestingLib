@@ -26,7 +26,7 @@
               success: function(data) {
                 console.log("Script loaded");
               },
-              async: true
+              async: false
             });
             google.charts.load('current', {'packages':['corechart']});
         }
