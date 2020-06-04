@@ -29,7 +29,7 @@
               },
               async: false
             });
-            google.charts.load('current', {'packages':['corechart']});
+            
         }
 
 
@@ -111,6 +111,7 @@
 
 
         redraw(){
+            await google.charts.load('current', {'packages':['corechart']});
             var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
