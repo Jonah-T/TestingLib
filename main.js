@@ -21,7 +21,7 @@
             this._firstConnection = 0;
            
             let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-            $.ajax({
+            await $.ajax({
               url: GoogleSRC,
               dataType: "script",
               success: function(data) {
@@ -111,7 +111,7 @@
 
 
         redraw(){
-            await google.charts.load('current', {'packages':['corechart']});
+            google.charts.load('current', {'packages':['corechart']});
             var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
