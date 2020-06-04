@@ -136,11 +136,12 @@
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-	    var div = $('#chart_div');
+	   // var div = $('#chart_div');
 		var div = document.createElement('div');              
-		document.body.appendChild(div);    
+		 
             var chart = new google.visualization.PieChart(div);
             chart.draw(data, options);
+		document.body.appendChild(div);   
         }
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
