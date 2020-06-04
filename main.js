@@ -21,7 +21,7 @@
             this._firstConnection = 0;
            
             let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-            await $.ajax({
+            $.ajax({
               url: GoogleSRC,
               dataType: "script",
               success: function(data) {
