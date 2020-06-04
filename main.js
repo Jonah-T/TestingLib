@@ -1,10 +1,12 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <h1>Testing!!!</h1>
-         <body>
-            <div id="chart_div"></div>
-        </body>
+			<style>
+				:host {
+					display: block;
+				} 
+			</style> 
+			<div id="chart_div"></div>
     `;
 
  
