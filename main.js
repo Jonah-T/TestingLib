@@ -126,6 +126,13 @@
               ['Zucchini', 1],
               ['Pepperoni', 2]
             ]);
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
         }
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
