@@ -117,7 +117,7 @@
 
 
         redraw(){
-		$( document ).ready(function() {
+
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -137,7 +137,10 @@
 
         // Instantiate and draw our chart, passing in some options.
 	    var div = $('#chart_div');
-            var chart = new google.visualization.PieChart(div[0]);
+		var para = document.createElement("P");               // Create a <p> element
+		para.innerText = "This is a paragraph";               // Insert text
+		document.body.appendChild(para);    
+            var chart = new google.visualization.PieChart(para);
             chart.draw(data, options);
         }
       // Callback that creates and populates a data table,
@@ -166,7 +169,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }*/
-			});
+		
         }         
     });
 }
