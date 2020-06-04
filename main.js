@@ -137,10 +137,9 @@
 
         // Instantiate and draw our chart, passing in some options.
 	    var div = $('#chart_div');
-		var para = document.createElement("P");               // Create a <p> element
-		para.innerText = "This is a paragraph";               // Insert text
-		document.body.appendChild(para);    
-            var chart = new google.visualization.PieChart(para);
+		var div = document.createElement('div');              
+		document.body.appendChild(div);    
+            var chart = new google.visualization.PieChart(div);
             chart.draw(data, options);
         }
       // Callback that creates and populates a data table,
