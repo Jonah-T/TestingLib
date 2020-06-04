@@ -2,7 +2,9 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <h1>Testing!!!</h1>
-        <div id="chart_div"></div>
+         <body>
+            <div id="chart_div"></div>
+        </body>
     `;
 
  
