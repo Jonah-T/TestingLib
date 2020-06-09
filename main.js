@@ -120,7 +120,9 @@
         redraw(){
 
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(function() { drawChart(this._g); });
+            google.charts.setOnLoadCallback(function () {
+							     drawChart(this._g);
+							   });
         function drawChart(divPar) {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
