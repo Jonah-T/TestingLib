@@ -126,10 +126,8 @@
         redraw(){
 
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(function () {
-							     drawChart(this._g);
-							   });
-        function drawChart(divPar) {
+            google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
