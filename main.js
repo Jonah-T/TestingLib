@@ -33,7 +33,8 @@
               },
               async: false
             });
-            
+            	this._g = document.createElement('div');
+		this._g.setAttribute("id", "Div1");
         }
 
 
