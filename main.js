@@ -77,7 +77,11 @@
         redraw(){
 
 			google.charts.load('current', {'packages':['corechart']});
-			google.charts.setOnLoadCallback(function () {
+			google.charts.setOnLoadCallback(
+						     drawChart(this._shadowRoot );
+						   );
+						   
+			function drawChart(Shadow) {
 				var data = new google.visualization.DataTable();
 				data.addColumn('string', 'Topping');
 				data.addColumn('number', 'Slices');
@@ -93,15 +97,13 @@
 						   'height':300};
 
 			// Instantiate and draw our chart, passing in some options.
-		   // var div = $(-'#chart_div');
-			var div = this._shadowRoot.getElementById('chart_div');  
+		   // var div = $('#chart_div');
+			var div = document.getElementById('div_test');  
 			 
 				var chart = new google.visualization.PieChart(div);
 				chart.draw(data, options);
 
         }
-						     
-						   );
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
