@@ -120,8 +120,8 @@
         redraw(){
 
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
+            google.charts.setOnLoadCallback(function() { drawChart(this._g); });
+        function drawChart(divPar) {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
@@ -140,7 +140,7 @@
 	   // var div = $('#chart_div');
 		var div = document.createElement('div');              
 		 
-            var chart = new google.visualization.PieChart(div);
+            var chart = new google.visualization.PieChart(divPar);
             chart.draw(data, options);
 		document.body.appendChild(div);   
         }
