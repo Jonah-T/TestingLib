@@ -126,8 +126,10 @@
         redraw(){
 
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
+               google.charts.setOnLoadCallback(function () {
+						     drawChart(this._shadowRoot );
+						   });
+        function drawChart(Shadow) {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
