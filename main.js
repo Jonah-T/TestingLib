@@ -1,4 +1,5 @@
 (function()  {
+	var _shadowRoot;
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 			<style>
