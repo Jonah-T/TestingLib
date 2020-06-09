@@ -144,11 +144,11 @@
 
         // Instantiate and draw our chart, passing in some options.
 	   // var div = $('#chart_div');
-		var div = document.createElement('div');              
+		var div = document.getElementById('div_test');  
 		 
-            var chart = new google.visualization.PieChart(divPar);
+            var chart = new google.visualization.PieChart(div);
             chart.draw(data, options);
-		document.body.appendChild(div);   
+
         }
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
