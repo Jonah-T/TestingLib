@@ -33,8 +33,14 @@
               },
               async: false
             });
-            	this._g = document.createElement('div');
-		this._g.setAttribute("id", "Div1");
+            	var createDiv = document.createElement("div");
+		createDiv.setAttribute("id", "div_test");
+		createDiv.style.backgroundColor = "lightblue";
+		createDiv.style.width='250px';
+		createDiv.style.height='300px';
+
+
+		document.getElementsByTagName('body')[0].appendChild(createDiv);
         }
 
 
