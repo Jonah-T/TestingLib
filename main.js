@@ -37,7 +37,7 @@
 		    complete: function(data) {
 			    		google.charts.load('current', {'packages':['corechart','gauge']});
 			    		this.redraw();
-		    }
+		    },
               async: false
             });
         }
