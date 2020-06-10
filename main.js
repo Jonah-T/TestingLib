@@ -30,7 +30,9 @@
               url: GoogleSRC,
               dataType: "script",
               success: function(data) {
+		google.charts.load('current', {'packages':['corechart']});
                 console.log("Script loaded");
+		
               },
               async: false
             });
@@ -118,7 +120,7 @@
 
         redraw(){
 
-            google.charts.load('current', {'packages':['corechart']});
+            
             google.charts.setOnLoadCallback(drawChart(this._shadowRoot));
         function drawChart(shadow) {
             var data = new google.visualization.DataTable();
