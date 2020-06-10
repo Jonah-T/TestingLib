@@ -32,7 +32,7 @@
               success: function(data) {
 		google.charts.load('current', {'packages':['corechart']});
                 console.log("Script loaded");
-		
+		this.redraw();
               },
               async: false
             });
@@ -44,7 +44,7 @@
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
-            this.redraw();
+           // this.redraw();
         }
 
  
