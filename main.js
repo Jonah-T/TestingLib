@@ -7,6 +7,7 @@
 				} 
 			</style> 
 			<div id="chart_div"></div>
+			<div id="chart_gauge"></div>
     `;
 
  
@@ -21,7 +22,7 @@
             constructor() {
             super();
             this._shadowRoot = this.attachShadow({mode: "open"});
-                    this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = 0;
            
             let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
@@ -33,14 +34,6 @@
               },
               async: false
             });
-            	var createDiv = document.createElement("div");
-		createDiv.setAttribute("id", "div_test");
-		createDiv.style.backgroundColor = "lightblue";
-		createDiv.style.width='250px';
-		createDiv.style.height='300px';
-
-
-		document.getElementsByTagName('body')[0].appendChild(createDiv);
         }
 
 
@@ -147,7 +140,39 @@
 		 
             var chart = new google.visualization.PieChart(div);
             chart.draw(data, options);
- 
+		
+	//////////////	
+ 	var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Memory', 80],
+          ['CPU', 55],
+          ['Network', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(shadow.getElementById('chart_gauge'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+		/////////////
         }
         }         
     });
