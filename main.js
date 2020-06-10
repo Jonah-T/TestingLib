@@ -23,7 +23,7 @@
             super();
             this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = 0;
+            this._firstConnection = true;
            
             let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
             $.ajax({
@@ -35,6 +35,7 @@
 		
               },
 		    complete: function(data) {
+			    		this._firstConnection = false;
 			    		google.charts.load('current', {'packages':['corechart','gauge']});
 			    		this.redraw();
 		    },
@@ -86,7 +87,9 @@
             //            alert(e);
             //    }
             //}
+	if(!this._firstConnection){
             this.redraw();
+	}
         //}
         }
     //loadScript(src, shadowRoot) {
