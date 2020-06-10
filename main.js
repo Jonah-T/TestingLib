@@ -45,8 +45,9 @@
               },
 		    complete: function(data) {
 			    		
-			    		
-			    		this.redraw();
+			    		google.charts.load('current', {'packages':['corechart','gauge']}).after(
+			    		this.redraw()
+						);
 			    
 		    }.bind(this),
               async: false
@@ -132,7 +133,7 @@
 
         redraw(){
 
-            google.charts.load('current', {'packages':['corechart','gauge']})
+            
             google.charts.setOnLoadCallback(drawChart(this._shadowRoot));
         function drawChart(shadow) {
             var data = new google.visualization.DataTable();
