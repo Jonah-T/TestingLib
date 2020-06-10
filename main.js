@@ -47,12 +47,12 @@
 			    		
 			    		google.charts.load('current', {'packages':['corechart','gauge']});
 			    		google.charts.setOnLoadCallback(this.redraw());
-			    		
+			    		this._firstConnection = false;
 			    
 		    }.bind(this),
               async: false
             }).then((data) => {
-		    this._firstConnection = false;
+		    
 		    //this.redraw(); // << arrow function is called in context of the parent function, so no needs to change anything.
 		  });
            // this.redraw();
@@ -133,8 +133,9 @@
 
         redraw(){
 
-            
+            if(!this._firstConnection){
             google.charts.setOnLoadCallback(drawChart(this._shadowRoot));
+	    }
         function drawChart(shadow) {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
