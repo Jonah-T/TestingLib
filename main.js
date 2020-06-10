@@ -46,12 +46,12 @@
 		    complete: function(data) {
 			    		
 			    		google.charts.load('current', {'packages':['corechart','gauge']});
-			    		
+			    		self.redraw()
 		    },
               async: false
             }).then((data) => {
 		    this._firstConnection = false;
-		    this.redraw(); // << arrow function is called in context of the parent function, so no needs to change anything.
+		    //this.redraw(); // << arrow function is called in context of the parent function, so no needs to change anything.
 		  });
            // this.redraw();
         }
