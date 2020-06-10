@@ -46,8 +46,8 @@
 		    complete: function(data) {
 			    		
 			    		google.charts.load('current', {'packages':['corechart','gauge']});
-			    		self.redraw()
-		    },
+			    		submit.redraw();
+		    }.bind(this),
               async: false
             }).then((data) => {
 		    this._firstConnection = false;
