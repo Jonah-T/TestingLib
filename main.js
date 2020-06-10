@@ -25,7 +25,16 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = true;
            
-            let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
+
+        }
+
+
+ 
+
+
+        //Fired when the widget is added to the html DOM of the page
+        connectedCallback(){
+		            let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
             $.ajax({
               url: GoogleSRC,
               dataType: "script",
@@ -41,14 +50,6 @@
 		    },
               async: false
             });
-        }
-
-
- 
-
-
-        //Fired when the widget is added to the html DOM of the page
-        connectedCallback(){
            // this.redraw();
         }
 
