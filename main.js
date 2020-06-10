@@ -30,10 +30,14 @@
               url: GoogleSRC,
               dataType: "script",
               success: function(data) {
-		google.charts.load('current', {'packages':['corechart','gauge']});
+
                 console.log("Script loaded");
-		this.redraw();
+		
               },
+		    complete: function(data) {
+			    		google.charts.load('current', {'packages':['corechart','gauge']});
+			    		this.redraw();
+		    }
               async: false
             });
         }
