@@ -45,8 +45,9 @@
               },
 		    complete: function(data) {
 			    		
-			    		google.charts.load('current', {'packages':['corechart','gauge']});
-			    		this.redraw();
+			    		google.charts.load('current', {'packages':['corechart','gauge']}).then(
+			    		this.redraw()
+						);
 		    }.bind(this),
               async: false
             }).then((data) => {
