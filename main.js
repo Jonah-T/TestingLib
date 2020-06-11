@@ -40,8 +40,14 @@
 		dataType: "script",
 		complete: function(data) {
 				this._firstConnection = false;
-				google.charts.load('current', {'packages':['corechart','gauge']});
-				google.charts.setOnLoadCallback(this.redraw());
+				$.when(
+				    google.charts.load('current', {'packages':['corechart','gauge']})
+				).done( ()=>{
+
+                    google.charts.setOnLoadCallback(this.redraw());					
+				    }
+				);
+				
 		}.bind(this),
 		async: true
 		});
