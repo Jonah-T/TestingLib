@@ -36,11 +36,11 @@
         connectedCallback(){
 			
 			let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-			$.when( $.ajax(
+			$.ajax({
 				url: GoogleSRC,
 				dataType: "script",
-				async: true)
-			
+				async: true
+				}
 			).done( ()=>{
 				
 							this._firstConnection = false;
