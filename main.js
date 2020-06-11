@@ -50,7 +50,7 @@
 			    		this._firstConnection = false;
 			    
 		    }.bind(this),
-              async: false
+              async: true
             }).then((data) => {
 		    
 		    //this.redraw(); // << arrow function is called in context of the parent function, so no needs to change anything.
