@@ -34,27 +34,17 @@
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
-		            let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-            $.ajax({
-              url: GoogleSRC,
-              dataType: "script",
-              success: function(data) {
-
-                console.log("Script loaded");
-		
-              },
-		    complete: function(data) {
-			    		this._firstConnection = false;
-			    		google.charts.load('current', {'packages':['corechart','gauge']});
-			    		google.charts.setOnLoadCallback(this.redraw());
-			    		
-			    
-		    }.bind(this),
-              async: true
-            }).then((data) => {
-		    
-		    //this.redraw(); // << arrow function is called in context of the parent function, so no needs to change anything.
-		  });
+		let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
+		$.ajax({
+		url: GoogleSRC,
+		dataType: "script",
+		complete: function(data) {
+				this._firstConnection = false;
+				google.charts.load('current', {'packages':['corechart','gauge']});
+				google.charts.setOnLoadCallback(this.redraw());
+		}.bind(this),
+		async: true
+		});
            // this.redraw();
         }
 
