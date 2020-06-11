@@ -45,7 +45,9 @@
 				
 							this._firstConnection = false;
 							google.charts.load('current', {'packages':['corechart','gauge']});
-							google.charts.setOnLoadCallback(()=>{alert(google.visualization);});
+							//google.charts.setOnLoadCallback(()=>{alert(google.visualization);});
+							google.charts.setOnLoadCallback(this.redraw());
+							
 							
 						}
 			);
