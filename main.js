@@ -34,24 +34,24 @@
 
         //Fired when the widget is added to the html DOM of the page
         connectedCallback(){
-		let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-		$.ajax({
-		url: GoogleSRC,
-		dataType: "script",
-		complete: function(data) {
-				this._firstConnection = false;
-				$.when(
-				    google.charts.load('current', {'packages':['corechart','gauge']})
-				).done( ()=>{
-
-                    google.charts.setOnLoadCallback(this.redraw());					
-				    }
-				);
+			
+			let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
+			$.when(
+				url: GoogleSRC,
+				dataType: "script",
+				async: true
+			
+			).done( ()=>{
 				
-		}.bind(this),
-		async: true
-		});
-           // this.redraw();
+							this._firstConnection = false;
+							google.charts.load('current', {'packages':['corechart','gauge']});
+							google.charts.setOnLoadCallback(()=>{alert('Ciao');});
+							
+						}
+			);
+		
+		
+        
         }
 
  
