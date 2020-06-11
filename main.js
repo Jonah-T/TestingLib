@@ -44,10 +44,10 @@
 			).done( ()=>{
 				
 							this._firstConnection = false;
-							google.charts.load('current', {'packages':['corechart','gauge']}).done(
+							google.charts.load('current', {'packages':['corechart','gauge']}).then( ()=>{
 							//google.charts.setOnLoadCallback(()=>{alert(google.visualization);});
-							google.charts.setOnLoadCallback(this.redraw());
-							);
+								google.charts.setOnLoadCallback(this.redraw());
+							});
 							
 							
 						}
