@@ -15,18 +15,16 @@
 
     customElements.define('com-sap-sample-testinglib', class TestingLib extends HTMLElement {
 
- 
+        constructor() {
 
- 
+                super();
+                this._shadowRoot = this.attachShadow({mode: "open"});
+                this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+                this._firstConnection = true;
+                this._numberData;
+                this._LabelData;
 
-            constructor() {
-            super();
-            this._shadowRoot = this.attachShadow({mode: "open"});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = true;
-           
-
-        }
+            }
 
 
  
@@ -81,36 +79,12 @@
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
-            //var that = this;
-            //if (this._firstConnection === 0) {
-            //    this._firstConnection = 1;
-            //    let GoogleSRC = "https://www.gstatic.com/charts/loader.js";
-            //    async function LoadLibs() {
-            //        try {
-            //            await loadScript(GoogleSRC, _shadowRoot);
-            //        } catch (e) {
-            //            alert(e);
-            //    }
-            //}
 	if(!this._firstConnection){
             this.redraw();
 	}
         //}
         }
-    //loadScript(src, shadowRoot) {
-    //        return new Promise(function(resolve, reject) {
-    //            let script = document.createElement('script');
-    //            script.src = src;
-//
-    //            script.onload = () => {
-    //                console.log("Load: " + src);
-    //                resolve(script);
-    //            }
-    //            script.onerror = () => reject(new Error(`Script load error for ${src}`));
-//
-    //            shadowRoot.appendChild(script)
-    //        });
-    //}
+
         //When the custom widget is removed from the canvas or the analytic application is closed
         onCustomWidgetDestroy(){
         }
@@ -190,7 +164,24 @@
 		/////////////
         }
         }         
-    });
-}
 
-    )();
+
+        get widgetData() {
+            return this._numberData;
+        }
+
+        set widgetData(value) {
+            this._numberData = value;
+        }
+
+        get widgetLabel() {
+            return this._LabelData;
+        }
+
+        set widgetLabel(value) {
+            this._LabelData = value;
+        }
+
+    });
+
+})();

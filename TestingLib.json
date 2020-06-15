@@ -14,13 +14,37 @@
             "url": "https://jonah-t.github.io/TestingLib/main.js",
             "integrity": "",
             "ignoreIntegrity" : true
-        },
+        }
     ],
 	"properties": {
+		"widgetData": {
+			"type": "number[]",
+			"description": "The number to insert into the Pie Chart"
+		},
+		"widgetLabel": {
+			"type": "string[]",
+			"description": "The Label to insert into the Pie Chart"
+		}
 	},
 	"methods": {
-	},
-	
-	"events": {
+		"setData": {
+			"description": "Set the value of the Pie Chart",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "number[]",
+					"description": "The Value of the Pie Chart"
+				},
+				{
+					"name": "newLabel",
+					"type": "string[]",
+					"description": "The Label of the Pie Chart"
+				}
+			],
+			"body": "this.widgetData = newValue;this.widgetLabel = newLabel;"
+		}
+		},
+
+		"events": {
+		}
 	}
-}
