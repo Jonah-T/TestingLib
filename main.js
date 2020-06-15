@@ -117,7 +117,9 @@
             data.addColumn('string', 'Territory');
             data.addColumn('number', 'Quantity');
             for (var i = 0; i < NumberData.length; i++) {
-                data.addRows([LabelData[i], NumberData[i]]);
+                data.addRows([
+                    [LabelData[i], NumberData[i]]
+                ]);
             }
             var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':400,
