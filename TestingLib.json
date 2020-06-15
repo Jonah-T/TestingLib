@@ -8,13 +8,13 @@
 	"newInstancePrefix": "TestingLib",
 	"version": "0.0.1",
 	"webcomponents": [
-        {
+		{
 			"kind": "main",
-			"tag": "com-sap-sample-TestingLib",			
-            "url": "https://jonah-t.github.io/TestingLib/main.js",
-            "integrity": "",
-            "ignoreIntegrity" : true
-        }
+			"tag": "com-sap-sample-testinglib",
+			"url": "https://jonah-t.github.io/TestingLib/main.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
     ],
 	"properties": {
 		"widgetData": {

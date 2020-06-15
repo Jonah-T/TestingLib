@@ -79,9 +79,9 @@
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
-	if(!this._firstConnection){
-            this.redraw();
-	}
+	        if(!this._firstConnection){
+                    this.redraw();
+	        }
         //}
         }
 
@@ -106,20 +106,16 @@
 
         redraw(){
 
-            if(!this._firstConnection){
-            google.charts.setOnLoadCallback(drawChart(this._shadowRoot));
+            if (!this._firstConnection) {
+                google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
 	    }
-        function drawChart(shadow) {
+        function drawChart(shadow,NumberData,LabelData) {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-              ['Mushrooms', 3],
-              ['Onions', 1],
-              ['Olives', 1],
-              ['Zucchini', 1],
-              ['Pepperoni', 2]
-            ]);
+            data.addColumn('string', 'Territory');
+            data.addColumn('number', 'Quantity');
+            for (var i = 0; i < NumberData.length; i++) {
+                data.addRows([LabelData[i], NumberData[i]);
+            }
             var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':400,
                        'height':300};
