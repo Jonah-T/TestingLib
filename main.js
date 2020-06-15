@@ -107,7 +107,10 @@
         redraw(){
 
             if (!this._firstConnection) {
-                google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
+                if (this._numberData !== undefined) {
+                    google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
+                }
+                
 	    }
         function drawChart(shadow,NumberData,LabelData) {
             var data = new google.visualization.DataTable();
