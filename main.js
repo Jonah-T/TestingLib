@@ -121,7 +121,7 @@
                     [LabelData[i], NumberData[i]]
                 ]);
             }
-            var options = {'title':'How Much Pizza I Ate Last Night',
+            var options = {'title':'Quantity per Territory',
                        'width':400,
                        'height':300};
 
